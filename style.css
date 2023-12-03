@@ -1,0 +1,116 @@
+
+/* Existing styles */
+
+/* Navbar styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+:root{
+    font-family: 'Poppins', sans-serif;
+}
+
+nav {
+    background-color: rgb(168, 167, 167);
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center; /* Center the navbar horizontally */
+}
+
+ul {
+    display: flex;
+    align-items: center; /* Align list items vertically in the navbar */
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
+    margin: 0 15px; /* Adjust the margin between list items */
+    cursor: pointer;
+}
+
+ul li:hover{
+    color: white;
+}
+.container {
+    width: 80%; /* Adjust the width of the container */
+    margin: 0 auto; /* Center the container horizontally */
+    text-align: center; /* Align text inside the container */
+}
+/* Table styles */
+table {
+    width: 80%; /* Adjust the width of the table */
+    margin: 20px auto; /* Center the table horizontally */
+    border-collapse: collapse; /* Collapse table borders */
+}
+
+th, td {
+    border: 1px solid black; /* Border for table cells */
+    padding: 8px; /* Add padding for cells */
+    text-align: center; /* Center-align text in cells */
+}
+
+th {
+    background-color: rgb(168, 167, 167); /* Background color for table header */
+}
+
+/* Optional: Zebra striping for better readability */
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Alternate row color */
+}
+/* Form styles */
+form {
+    width: 80%; /* Adjust the width of the form */
+    margin: 20px auto; /* Center the form horizontally */
+    text-align: left center ; /* Align form elements */
+}
+
+label {
+    display: block; /* Display labels as blocks */
+    margin-bottom: 5px; /* Add spacing between labels and inputs */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 25%; /* Set input width to 100% */
+    padding: 2px; /* Add padding for inputs */
+    margin-bottom: 15px; /* Add spacing between inputs */
+}
+
+button[type="submit"] {
+    padding: 8px 20px; /* Adjust button padding */
+    background-color: black;
+    color: antiquewhite;
+    font-weight: 600;
+    border-radius: 20px;
+    border-color: rgb(136, 148, 255);
+    border-width: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #7f7f7f;
+    color:black;
+}
+
+
+/* Rest of your styles */
+
+        h1,h2,h3{
+            margin: 23px;
+        }
+
+        .btn{
+            padding: 8px 17px;
+            background-color: black;
+            color: antiquewhite;
+            font-weight: 900;
+            border-radius: 20px;
+            border-color: rgb(255, 136, 156);
+            margin: 20px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background-color: #cfc8c8;
+        }
+        
