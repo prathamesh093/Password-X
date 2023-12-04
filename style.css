@@ -2,12 +2,22 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    background-image: url('bg.jpg'); /* Replace 'your-background-image.jpg' with the path to your image */
+    background-size: cover; /* Ensures the background image covers the entire viewport */
+    background-repeat: no-repeat; /* Prevents the background image from repeating */
+    background-position: center center; /* Centers the background image */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
     background-color: #f4f4f4;
 }
 
 nav {
-    background-color: #333;
-    color: white;
+    background-color: rgb(255, 255, 255);
+    color: rgb(18, 17, 17);
     padding: 15px;
     display: flex;
     justify-content: space-between;
@@ -16,6 +26,7 @@ nav {
 
 .logo {
     font-size: 1.5em;
+  
 }
 
 ul {
@@ -25,11 +36,12 @@ ul {
 
 li {
     margin-right: 20px;
+    
 }
 
 a {
     text-decoration: none;
-    color: white;
+    color: rgb(1, 1, 1);
 }
 
 .container {
@@ -39,6 +51,7 @@ a {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center the content */
 }
 
 h1, h2 {
@@ -91,6 +104,7 @@ input {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    float: right; /* Move the button to the right */
 }
 
 .btn:hover {
