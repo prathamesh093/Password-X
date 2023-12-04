@@ -1,59 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal-X</title>
+    <title>PassX - Your Personal Password Manager</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <nav>
-<ul>
-    <li>Home</li>
-    <li>About</li>
-    <li>Contact</li>
-</ul>
+        <div class="logo">PassX</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
     </nav>
-    <div class="container">
-        <h1>Personal-X</h1>
-            <p>
-                "Welcome to your digital safe haven! Get ready to safeguard your passwords with ease and confidence. Embrace hassle-free security and seamless access across all your devices."
-            </p>
-        <h2>Your secrets...</h2>
+    <div class="container" id="home">
+        <h1>Password Manager</h1>
+        <p>"Welcome to your digital safe haven! Get ready to safeguard your passwords with ease and confidence. Embrace hassle-free security and seamless access across all your devices."</p>
+
+        <h2>Your Passwords <span id="alert"></span></h2>
         <table>
             <tr>
-              <th>Website</th>
-              <th>Username</th>
-              <th>Password</th>
-              <th>Delete</th>
+                <th>Website</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Delete</th>
             </tr>
-            <tr>
-              <td>ABC</td>
-              <td>randomuser@gmail.com</td>
-              <td>randomuser@gmail.com</td>
-              <td>randomuser@gmail.com</td>
-            </tr>
-            
-             
-          </table>
-          
-        <h2>Add your Passwords</h2>
+        </table>
+
+        <h2>Add a Password</h2>
         <form action="/submit" method="post">
+            <!-- Text input for website -->
+            <label for="website">Website:</label>
+            <input type="text" id="website" name="website" required>
+            <br><br>
             <!-- Text input for username -->
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
             <br><br>
-
             <!-- Password input -->
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
             <br>
-        
-                    
             <!-- Submit button -->
             <button class="btn" type="submit">Submit</button>
-          </form>
+        </form>
+        <div class="scroll-down">
+            <a href="#about"></a>
+        </div>
+        <div class="scroll-down">
+            <a href="#contact"></a>
+        </div>
     </div>
+
+    <div class="container" id="about">
+        <h2>About PassX</h2>
+        <p>PassX is your reliable and secure password manager designed to provide a digital safe haven for your sensitive information. Our mission is to make password management easy and efficient, allowing you to navigate the digital world with confidence.</p>
+        <div class="scroll-down">
+            <a href="#home"></a>
+        </div>
+    </div>
+    
+    </div>
+    
     <script src="script.js"></script>
 </body>
+
 </html>
