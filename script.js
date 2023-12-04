@@ -6,7 +6,7 @@ function maskPassword(pass) {
     return str;
 }
 
-function copyText(txt) {
+function copyText(txt, field) {
     navigator.clipboard.writeText(txt).then(
         () => {
             /* clipboard successfully set */
@@ -14,11 +14,12 @@ function copyText(txt) {
             setTimeout(() => {
                 document.getElementById("alert").style.display = "none";
             }, 2000);
+            alert(`${field} copied!`);
         },
         () => {
             /* clipboard write failed */
-            alert("Clipboard copying failed");
-        },
+            alert(`Clipboard copying for ${field} failed`);
+        }
     );
 }
 
@@ -52,11 +53,11 @@ const showPasswords = () => {
             const element = arr[index];
 
             str += `<tr>
-    <td>${element.website} <img onclick="copyText('${element.website}')" src="./copy.svg" alt="Copy Button" width="10" width="10" height="10">
+    <td>${element.website} <img onclick="copyText('${element.website}', 'Website')" src="./copy.svg" alt="Copy Button" width="10" height="10">
     </td>
-    <td>${element.username} <img onclick="copyText('${element.username}')" src="./copy.svg" alt="Copy Button" width="10" width="10" height="10">
+    <td>${element.username} <img onclick="copyText('${element.username}', 'Username')" src="./copy.svg" alt="Copy Button" width="10" height="10">
     </td>
-    <td>${maskPassword(element.password)} <img onclick="copyText('${element.password}')" src="./copy.svg" alt="Copy Button" width="10" width="10" height="10">
+    <td>${maskPassword(element.password)} <img onclick="copyText('${element.password}', 'Password')" src="./copy.svg" alt="Copy Button" width="10" height="10">
     </td>
     <td><button class="btnsm" onclick="deletePassword('${element.website}')">Delete</button></td>
         </tr>`;
@@ -66,23 +67,14 @@ const showPasswords = () => {
     website.value = "";
     username.value = "";
     password.value = "";
-};
+}
 
 console.log("Working");
-showPasswords();
-
+showPasswords()
 document.querySelector(".btn").addEventListener("click", (e) => {
     e.preventDefault();
-
-    // Input validation
-    if (!website.value || !username.value || !password.value) {
-        alert("Please fill in all fields");
-        return;
-    }
-
     console.log("Clicked....");
     console.log(username.value, password.value);
-
     let passwords = localStorage.getItem("passwords");
     console.log(passwords);
     if (passwords == null) {
