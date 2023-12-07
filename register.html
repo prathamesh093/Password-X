@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTRATION FORM </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('giphy.gif') center center/cover no-repeat; /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+            margin: 0;
+        }
+        
+        form {
+            width: 400px;
+            margin: 50px auto;
+            border: 2px solid #3498db;
+            text-align: left;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+            background-color: #fff;
+        }
+        
+        input[type="email"],
+        input[type="password"],
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #3498db;
+            display: block;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        h1 {
+            color: #333;
+        }
+        
+        
+    </style>
+</head>
+
+<body>
+    
+    <form action="login.html" method="post">
+        <h1>Registration Form</h1>
+        <a href="index.html"></a>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" id="confirm_password" name="confirm_password" required>
+
+        <input type="submit" value="Register">
+        <a href="register.html"></a>
+        <a href="login.html">Already have an account? Login here.</a>
+    </form>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("registrationForm");
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (validateForm()) {
+            form.submit();
+        }
+    });
+    function validateForm() {
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("confirmPassword").value;
+        const dob = document.getElementById("dob").value;
+        const gender = document.querySelector('input[name="gender"]:checked');
+        if (name === "" || email === "" || password === "" || confirmPassword === "" 
+        || dob === "" || gender === null) {
+            alert("All fields are required");
+            return false;
+        }
+        if (password !== confirmPassword) {
+            alert("Password and Confirm Password must match");
+            return false;
+        }
+        return true;
+    }
+    function validateEmail() {
+        if (emailInput. value === ''){
+        emailError. textContent = 'Email is required';
+        return false;
+        } else if (!emailRegex. test (emailInput.value)) {
+        emailError. textContent = 'Email is invalid';
+        return false;
+        } else {
+        emailError. textContent = ' ';
+        return true;
+        }
+}
+});
+ // Validate password
+ if (password.value.trim() === '') {
+    passwordError.textContent = 'Password is required';
+    errors = true;
+} else if (!/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[&@$#]).{7,}/.test(password.value)) {
+    passwordError.textContent = 'Password must be at least 7 characters long and contain at least one capital letter, one digit, and one special character from the set (&, @, #, $)';
+    errors = true;
+} else {
+    passwordError.textContent = '';
+}
+
+// Validate confirm password
+if (confirmPassword.value.trim() === '') {
+    confirmPasswordError.textContent = 'Confirm password is required';
+    errors = true;
+} else if (confirmPassword.value !== password.value) {
+    confirmPasswordError.textContent = 'Passwords do not match';
+    errors = true;
+} else {
+    confirmPasswordError.textContent = '';
+}
+
+if (errors) {
+    event.preventDefault();
+} else {
+    alert("Form submitted successfully");
+}
+
+
+    </script>
+</body>
+</html>
